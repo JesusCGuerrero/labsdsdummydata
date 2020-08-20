@@ -22,11 +22,7 @@ module.exports = {
     client: "pg",
     useNullAsDefault: true,
     connection: pgConnection,
-    pool: {
-        afterCreate: (conn, done) => {
-            conn.run("PRAGMA foreign_keys = ON", done);
-        },
-    },
+    pool: {min: 2, max: 10},
     migrations: {
         directory: "./migrations",
     },
