@@ -18,10 +18,10 @@ module.exports = {
   },
 
   production: {
-    client: "pg",
+    client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-        filename: "./dev.pg",
+        filename: "./dev.sqlite3",
     },
     pool: {
         afterCreate: (conn, done) => {
