@@ -1,4 +1,5 @@
 // Update with your config settings.
+const pgConnection = process.env.DATABASE_URL
 
 module.exports = {
 
@@ -20,9 +21,7 @@ module.exports = {
   production: {
     client: "pg",
     useNullAsDefault: true,
-    connection: {
-        filename: "./dev.pg",
-    },
+    connection: pgConnection,
     pool: {
         afterCreate: (conn, done) => {
             conn.run("PRAGMA foreign_keys = ON", done);
