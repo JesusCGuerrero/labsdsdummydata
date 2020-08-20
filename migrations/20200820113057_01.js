@@ -3,7 +3,7 @@ exports.up = function(knex) {
 
     .createTable('ds_string', ds_string => {
         ds_string.increments();
-        ds_string.string('data')
+        ds_string.json('data')
     })
 };
 
